@@ -19,6 +19,8 @@ class MapUserRepositoryTest {
         mapUserRepository = new MapUserRepository();
     }
 
+
+    // этот метот в ориге возвращает Юзера , а ниже метод нечего не возвращает
     @Test
     public void findById_vernutUsera_kogdaUserSushestvuet() { //по сути моск Юзер отличаеться лишь тем что у него мы можем возвращать в методезаранее прописанное значние - это по сути тоже самое тут  что - что у него мы задали только нужныенам поля для иквалса в данном случае поле ид
         final User userKotoruyMock = mock(User.class); //подготовь
@@ -35,11 +37,18 @@ class MapUserRepositoryTest {
 
 
     @Test
-    public void saveUser_shouldSaveLastCalledUser_whenCalledMultipleTimes() //ПЕРЕВОД saveUser должен сохранить последнего вызванного пользователя, когда вызывается несколько раз
-    {
+    public void saveUser_shouldSaveLastCalledUser_whenCalledMultipleTimes() { //ПЕРЕВОД saveUser должен сохранить последнего вызванного пользователя, когда вызывается несколько раз
+       final User user = mock(User.class);
+       when(user.getId()).thenReturn(ID);
+       final User lastUser = mock(User.class);
+       when(lastUser.getId()).thenReturn(ID);
 
+       mapUserRepository.save(user);
+       mapUserRepository.save(lastUser);
+       final User actual = mapUserRepository.findById(ID);
 
-
+       assertNotNull(actual);
+       assertEquals(lastUser,actual); // по умолчаню иквалс у мокков тоже cамое что и ==
 
     }
 }
