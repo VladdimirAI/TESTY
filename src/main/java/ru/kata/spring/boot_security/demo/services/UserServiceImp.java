@@ -1,6 +1,7 @@
 package ru.kata.spring.boot_security.demo.services;
 
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,8 +23,13 @@ import java.util.stream.Collectors;
 
 
 @Service
+@AllArgsConstructor
 public class UserServiceImp implements UserService {
+
+
+
     private UserRepository userRepository;
+
     private RoleRepository roleRepository;
 
 
