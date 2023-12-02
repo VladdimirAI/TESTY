@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-class MapUserRepositoryTest {
+class MapUserRepositoryTest { // по факту проверка самого хранилища - чтоно сохраняет и достает результаты - в данном репозитории хранилище это мапа а в настоящем может быть же ибд - носкорее всего это не будет являться интеграционным тестом
 
     private static final Long ID = 4L;
 
