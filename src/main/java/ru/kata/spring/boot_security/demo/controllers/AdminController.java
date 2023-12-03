@@ -24,7 +24,7 @@ import java.util.Set;
 public class AdminController {
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
-    RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
     public AdminController(UserService userService, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
