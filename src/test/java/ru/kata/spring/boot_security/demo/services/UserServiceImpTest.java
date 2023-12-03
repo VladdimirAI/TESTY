@@ -11,44 +11,46 @@ import ru.kata.spring.boot_security.demo.repositories.RoleRepository;
 import ru.kata.spring.boot_security.demo.repositories.UserRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 class UserServiceImpTest {
+    private static final long ID = 1L;
+    private static final String NAME = "Bob";
 
     @Mock
-    private UserRepository userRepository;
-
-    @Mock
-    private RoleRepository roleRepository;
+    private UserRepository userRepository; // делает моку Репозитория
 
     @InjectMocks
-    private UserServiceImp userService;
+    private UserServiceImp userService; // инжектит сюда эту моку  -- теструемый класс
+
 
     @BeforeEach
     public void setup() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
 
 
 
     @Test
-    public void findByUsernameTest() {
-        String username = "testUser";
-        User mockUser = new User();
-        mockUser.setUsername(username);
+    public void findUser_shouldCallRepository() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
+        final User user = mock(User.class);
+        when(userService.findByUsername(NAME)).thenReturn(user);
 
-        when(userRepository.findByUsername(username)).thenReturn(mockUser);
+        final User actual = userService.findByUsername(NAME);
 
-        User user = userService.findByUsername(username);
+        assertNotNull(actual);
+        assertEquals(user,actual);
+        verify(userRepository).findByUsername(NAME); //проверка что findById был вызван всего один раз - только где вызван в сервисе один раз или репозитоории ??
 
-        assertEquals(username, user.getUsername());
-        verify(userRepository).findByUsername(username);
+
     }
 
+    @Test
+    public void saveUser_shouldCaltRepository() {
 
 
+    }
 
 
 }

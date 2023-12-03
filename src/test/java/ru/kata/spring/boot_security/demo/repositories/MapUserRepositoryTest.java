@@ -8,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+// можно было провеить еще одновременные доступы и чтения - было бы тогда этоинтегриционым тестированием ?
 class MapUserRepositoryTest { // по факту проверка самого хранилища - чтоно сохраняет и достает результаты - в данном репозитории хранилище это мапа а в настоящем может быть же ибд - носкорее всего это не будет являться интеграционным тестом
 
     private static final Long ID = 4L;
 
-    MapUserRepository mapUserRepository;
+    private MapUserRepository mapUserRepository;
 
     @BeforeEach
     public void setup() {
