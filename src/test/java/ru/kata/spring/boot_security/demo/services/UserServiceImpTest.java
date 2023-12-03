@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.kata.spring.boot_security.demo.entities.User;
@@ -31,16 +32,16 @@ class UserServiceImpTest {
     }
 
 
-    @Test
+    @Test //проверяем что выйдя из репозитория и подойдя к строке ретерн уже в серввисе юзер не стал нулем и не поменялся - по сути проверка нет ли между получением юзера путем делигироввания и стркой возврата ретерн - кода портюзего изменяющего нашего полученого юзера
     public void findUser_shouldCallRepository() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
         final User user = mock(User.class);
-        when(userService.findByUsername(NAME)).thenReturn(user);
+        when(userRepository.findByUsername(NAME)).thenReturn(user);
 
         final User actual = userService.findByUsername(NAME);
 
         assertNotNull(actual);
         assertEquals(user, actual);
-        verify(userRepository).findByUsername(NAME); //todo нифига не понимаю где у меня в тесте то вызывался один раз этот метод - ведь логика  была переопредела просто на возврат//выполняет проверку, что метод findByUsername(NAME) был вызван ровно один раз на моке userRepository с аргументом NAME.
+        verify(userRepository).findByUsername(NAME);
 
 
     }
@@ -57,6 +58,28 @@ class UserServiceImpTest {
 
 
 }
+
+
+
+// прикол в том что так тоже работает не смотря на         when(userService.findByUsername(NAME)).thenReturn(user);
+//    @Test
+//    public void findUser_shouldCallRepository() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
+//        final User user = mock(User.class);
+//        when(userService.findByUsername(NAME)).thenReturn(user);
+//
+//        final User actual = userService.findByUsername(NAME);
+//
+//        assertNotNull(actual);
+//        assertEquals(user, actual);
+//        verify(userRepository).findByUsername(NAME); //todo нифига не понимаю где у меня в тесте то вызывался один раз этот метод - ведь логика  была переопредела просто на возврат//выполняет проверку, что метод findByUsername(NAME) был вызван ровно один раз на моке userRepository с аргументом NAME.
+//
+//
+//    }
+
+
+
+
+
 
 //
 //@Test
