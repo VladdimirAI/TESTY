@@ -22,14 +22,13 @@ class UserServiceImpTest {
     private UserRepository userRepository; // делает моку Репозитория
 
     @InjectMocks
-    private UserServiceImp userService; // инжектит сюда эту моку  -- теструемый класс
+    private UserServiceImp userService; // инжектит сюда эту моку  -- теструемый класс     --- это тоже становиться моком
 
 
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
     }
-
 
 
     @Test
@@ -40,15 +39,19 @@ class UserServiceImpTest {
         final User actual = userService.findByUsername(NAME);
 
         assertNotNull(actual);
-        assertEquals(user,actual);
-        verify(userRepository).findByUsername(NAME); //проверка что findById был вызван всего один раз - только где вызван в сервисе один раз или репозитоории ??
+        assertEquals(user, actual);
+        verify(userRepository).findByUsername(NAME); //todo нифига не понимаю где у меня в тесте то вызывался один раз этот метод - ведь логика  была переопредела просто на возврат//выполняет проверку, что метод findByUsername(NAME) был вызван ровно один раз на моке userRepository с аргументом NAME.
 
 
     }
 
     @Test
     public void saveUser_shouldCaltRepository() {
+        final User user = mock(User.class);
 
+        userService.save(user);
+
+        verify(userRepository).save(user); // по сути проверяем произошло ли делигирование методу userRepository).save с аргументом user
 
     }
 
