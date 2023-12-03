@@ -22,6 +22,7 @@ import java.util.Set;
 @Log4j2
 @Controller
 public class AdminController {
+
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
 

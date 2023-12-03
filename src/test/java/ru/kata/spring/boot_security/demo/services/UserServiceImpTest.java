@@ -1,11 +1,14 @@
 package ru.kata.spring.boot_security.demo.services;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.kata.spring.boot_security.demo.entities.User;
 import ru.kata.spring.boot_security.demo.repositories.RoleRepository;
@@ -14,7 +17,7 @@ import ru.kata.spring.boot_security.demo.repositories.UserRepository;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
+@ExtendWith(MockitoExtension.class)///
 class UserServiceImpTest {
     private static final long ID = 1L;
     private static final String NAME = "Bob";
@@ -29,10 +32,24 @@ class UserServiceImpTest {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
+//        when(userRepository.findById(Mockito.anyLong())).thenAnswer(invocation ->
+//                {
+//                    long id = invocation.<Long>getArgument(0);
+//                    if (id<=0){
+//                        throw new RuntimeException("Неверный формат ID");
+//                    }
+//                    return new User();
+//                }
+//
+//                );
+
+
     }
 
 
+
     @Test
+    @DisplayName("Проверяет поиск делегируеться ли логика в репозиторий")
     public void findUser_shouldCallRepository() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
         final User user = mock(User.class);
         when(userRepository.findByUsername(NAME)).thenReturn(user);
@@ -47,6 +64,7 @@ class UserServiceImpTest {
     }
 
     @Test
+    @DisplayName("Проверяет save делегируеться ли логика в репозиторий")
     public void saveUser_shouldCaltRepository() {
         final User user = mock(User.class);
 
@@ -56,14 +74,9 @@ class UserServiceImpTest {
 
     }
 
-
-}
-
-
-
 // прикол в том что так тоже работает не смотря на         when(userService.findByUsername(NAME)).thenReturn(user);
 //    @Test
-//    public void findUser_shouldCallRepository() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
+//    public void findUser_shouldCallRepository1() { // а такое наименование(просто добаввление тест к реальному названию) помойму скажет майвену при сборке или дженкенсу запустить тест
 //        final User user = mock(User.class);
 //        when(userService.findByUsername(NAME)).thenReturn(user);
 //
@@ -75,6 +88,11 @@ class UserServiceImpTest {
 //
 //
 //    }
+}
+
+
+
+
 
 
 
