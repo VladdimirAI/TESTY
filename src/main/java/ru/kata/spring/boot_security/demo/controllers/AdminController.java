@@ -24,13 +24,13 @@ import java.util.Set;
 public class AdminController {
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
-    private final RoleRepository roleRepository;
+
 
     @Autowired
     public AdminController(UserService userService, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
         this.userService = userService;
         this.passwordEncoder = (BCryptPasswordEncoder) passwordEncoder;
-        this.roleRepository = roleRepository;
+
     }
 
 
