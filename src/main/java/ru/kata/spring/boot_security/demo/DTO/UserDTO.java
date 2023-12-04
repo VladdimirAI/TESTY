@@ -9,9 +9,9 @@ import java.util.Objects;
 @Setter
 public class UserDTO {
 
-    private Long id;
-    private String username;
-    private String email;
+     Long id;
+    String username;
+    String email;
     // Вы можете включить другие поля, которые считаете нужными
 
     // Конструкторы, геттеры и сеттеры
@@ -49,11 +49,11 @@ public class UserDTO {
         if (this == o) return true;
         if (!(o instanceof UserDTO)) return false;
         UserDTO userDTO = (UserDTO) o;
-        return getId().equals(userDTO.getId());
+        return getUsername().equals(userDTO.getUsername());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(getUsername());
     }
 }
