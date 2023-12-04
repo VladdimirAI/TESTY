@@ -14,20 +14,20 @@ import ru.kata.spring.boot_security.demo.services.UserService;
 @RequestMapping("/tests")
 public class AmninRESTController {
 
-     UserService userService;
-//    UserMapper userMapper; // Убираем аннотацию Autowired и final не нужен
-      MapperUser userMapper;
+    UserService userService;
+    UserMapper userMapper; // Убираем аннотацию Autowired и final не нужен
+//      MapperUser userMapper;
 
-//    public AmninRESTController(UserService userService, UserMapper userMapper) {
-//        this.userService = userService;
-//        this.userMapper = userMapper;
-//    }
-
-
-    public AmninRESTController(UserService userService, MapperUser userMapper) {
+    public AmninRESTController(UserService userService, UserMapper userMapper) {
         this.userService = userService;
         this.userMapper = userMapper;
     }
+
+//
+//    public AmninRESTController(UserService userService, MapperUser userMapper) {
+//        this.userService = userService;
+//        this.userMapper = userMapper;
+//    }
 
     @GetMapping("/{name}")
     public UserDTO getUserByName(@PathVariable("name") String userName) {
@@ -35,9 +35,9 @@ public class AmninRESTController {
         final User user = userService.findByUsername(userName);
         System.out.println("Завершился вызов userService.findByUsername(userName);");
         System.out.println("Начался вызов userMapper.userToUserDTO(user);");
-       UserDTO userDTO = userMapper.userToUserDTO(user);
+        UserDTO userDTO = userMapper.userToUserDTO(user);
         System.out.println("Завершиля вызов userMapper.userToUserDTO(user);");
-       return userDTO;
+        return userDTO;
     }
 
 

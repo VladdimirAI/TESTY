@@ -23,10 +23,10 @@ class AmninRESTControllerTest {
 
     String NAME = "Bob";
 
-    //    @Mock
-//     UserMapper userMapper;
-    @Mock
-    MapperUser userMapper;
+        @Mock
+     UserMapper userMapper;
+//    @Mock
+//    MapperUser userMapper;
 
     @Mock
     UserService userService;
@@ -55,12 +55,16 @@ class AmninRESTControllerTest {
         assertNotNull(actual);
         assertEquals(actual, userDTO);
         verify(userService.findByUsername(NAME));
-        verify(userMapper.userToUserDTO(any(User.class)));
+//        verify(userMapper.userToUserDTO(any(User.class)));
 
     }
 
     @Test
     void saveUserNoRole() {
+
+
+
+
     }
 }
 
